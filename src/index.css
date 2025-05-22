@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .hero-card {
+    @apply relative overflow-hidden transition-transform duration-300;
+  }
+  
+  .hero-card::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white/10 to-transparent -translate-x-full transition-transform duration-600;
+  }
+  
+  .hero-card:hover::before {
+    @apply translate-x-full;
+  }
+}
+@layer utilities {
+  .left-100 {
+    left: 100%;
+  }
+}
